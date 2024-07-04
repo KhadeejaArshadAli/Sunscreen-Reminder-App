@@ -43,6 +43,19 @@ function UV() {
     // // //     // fetchUVData();
     // forecastUVdata();
     // }, []);
+    const getUVIndexClass = (uvIndex) => {
+        if (uvIndex >= 0 && uvIndex <= 2) {
+            return 'green';
+        } else if (uvIndex >= 3 && uvIndex <= 5) {
+            return 'yellow';
+        } else if (uvIndex >= 6 && uvIndex <= 7) {
+            return 'orange';
+        } else if (uvIndex >= 8) {
+            return 'violet';
+        }
+        return '';
+    };
+
 
 
     return (
@@ -54,22 +67,16 @@ function UV() {
             </div>
             <div className='measure'>
 
-                <div className='currentUV'>
+                <div className={`current-uv-index ${getUVIndexClass(11)}`}>
                     <p className='para'>Current UV Index</p>
 
                     <p className='now'>
-                        {currentUVIndex}
+                        {0}
                     </p>
-                    <div class="sunbeams">
-		  <div class="beam beam1"></div>
-		  <div class="beam beam2"></div>
-		  <div class="beam beam3"></div>
-		  <div class="beam beam4"></div>
-		  <div class="beam beam5"></div>
-		  <div class="beam beam6"></div>
-		  <div class="beam beam7"></div>
-		  <div class="beam beam8"></div>
-		</div>
+
+
+
+
                 </div>
                 <div className='LMHE'>
                     <div className='Low'>Low</div>
@@ -82,37 +89,52 @@ function UV() {
             <div className='week'>
                 <h2>UV Index Forcast</h2>
                 <div className='days'>
-                    {uvForecast.length > 0 && (
-                        <>
-                            <div className='day1'> {uvForecast[1]}</div>
-                            <div className='day2'> {uvForecast[2]}</div>
-                            <div className='day3'> {uvForecast[3]}</div>
-                            <div className='day4'> {uvForecast[4]}</div>
-                            <div className='day5'>{uvForecast[5]}</div>
-                            <div className='day6'> {uvForecast[6]}</div>
-                            <div className='day7'>{uvForecast[7]}</div>
+                    {/* {uvForecast.length > 0 && ( */}
+                        <>  
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Mon</div>
+
+                        </div>
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Tues</div>
+
+                        </div>
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Wed</div>
+
+                        </div>
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Thurs</div>
+
+                        </div>
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Fri</div>
+
+                        </div> <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div  className='label'>Sat</div>
+
+                        </div>
+                        <div className='day'>
+                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
+                        <div className='label'>Sun</div>
+
+                        </div>
+                       
+                           
                         </>
-                    )}
+                    {/* )} */}
 
                 </div>
 
             </div>
 
-            <div className='reminder'>
-                <h2>Suncreen Reminders</h2>
-                <div className='reminder1'>
-                    <input type='checkbox' id='On' />
-                    <label for='On'>On</label>
-
-                </div>
-                <div className='reminder2'>
-                    <input type='checkbox' id='Off' />
-                    <label for='Off'>Off</label>
-                </div>
-
-
-            </div>
-
+         
 
 
         </>
