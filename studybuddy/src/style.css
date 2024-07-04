@@ -1,110 +1,147 @@
-*, *::before, *::after{
-    box-sizing: border-box;
-} 
-body{
-    background-color: rgb(243, 238, 214);
-    font-family: Arial, Helvetica, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.upper{
-    margin-bottom: 5rem;
+body {
+  background-color: rgb(243, 238, 214);
+  font-family: Arial, Helvetica, sans-serif;
 }
-.heading{
-    text-align: center;
-    font-size: 4rem;
-    margin-bottom: 1rem;
+.upper {
+  margin-bottom: 5rem;
 }
-.para1{
-    text-align: center;
-    font-size: 2rem ;
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
 }
-.measure{
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline;
+.para1 {
+  text-align: center;
+  font-size: 2rem;
 }
-.currentUV{
-    background-color: rgb(255, 213, 0);
-    height: 16rem;
-    width: 16rem;
-    border-radius: 8rem;
-    align-content: center;
-    border: 1px solid black;
+.measure {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
 }
-.para{
-    margin-left: 2.7rem;
-    margin-top: 4rem;
-    margin-bottom: 0;
-    font-weight: 600;
-    font-size: 1.4rem;
+.currentUV {
+  background-color: rgb(255, 213, 0);
+  height: 16rem;
+  width: 16rem;
+  border-radius: 8rem;
+  align-content: center;
+  border: 1px solid black;
 }
-.now{
-    margin-top: 0;
-   font-size: 5rem;
-    margin-left: 5.5rem;
-    font-weight: 800;
+.para {
+  margin-left: 2.7rem;
+  margin-top: 4rem;
+  margin-bottom: 0;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
-.Low,.Medium,.High,.Extreme{
-    margin-top: 1.1rem;
-    height: 2.5rem;
-    width: 8rem;
-    background-color: greenyellow;
-    border: 1px solid black;
-    font-size: 1.7rem;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
+.now {
+  margin-top: 0;
+  font-size: 5rem;
+  margin-left: 5.5rem;
+  font-weight: 800;
+}
+.Low,
+.Medium,
+.High,
+.Extreme {
+  margin-top: 1.1rem;
+  height: 2.5rem;
+  width: 8rem;
+  background-color: greenyellow;
+  border: 1px solid black;
+  font-size: 1.7rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+}
+.Medium {
+  background-color: rgb(0, 179, 255);
+}
+.High {
+  background-color: rgb(255, 213, 0);
+}
+.Extreme {
+  background-color: rgb(234, 0, 255);
+}
+.week {
+  margin-top: 4rem;
+  margin-left: 2rem;
+}
+.days {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+}
+.day1,
+.day2,
+.day3,
+.day4,
+.day5,
+.day6,
+.day7 {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 2rem;
+  background-color: rgb(234, 0, 255);
+  border: 1.5px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+.day2 {
+  background-color: rgb(255, 213, 0);
+}
+.day3 {
+  background-color: rgb(0, 179, 255);
+}
 
-
+.reminder {
+  margin-top: 1.7rem;
 }
-.Medium{
-    background-color: rgb(0, 179, 255);
+.reminder1,
+.reminder2 {
+  display: inline-block;
+  font-size: 2em;
 }
-.High{
-    background-color:  rgb(255, 213, 0);
-
+input[type="checkbox"] {
+  width: 4rem;
+  height: 1.7rem;
 }
-.Extreme{
-    background-color: rgb(234, 0, 255);
-}
-.week{
-    margin-top: 4rem;
-    margin-left: 2rem;
-}
-.days{
-    margin-top: 1rem;
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-   
-
-}
-.day1,.day2,.day3,.day4,.day5,.day6,.day7{
-    height: 4rem;
-    width: 4rem;
-    border-radius: 2rem;
-    background-color: rgb(234, 0, 255);
-    border: 1.5px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-}
-.day2{
-    background-color: rgb(255, 213, 0);
-}
-.day3{
-    background-color: rgb(0, 179, 255);
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid yellow;
+  position: absolute;
 }
 
-.reminder{
-    margin-top: 1.7rem;
+.triangle.top {
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-.reminder1,.reminder2{
-    display: inline-block;
-    font-size: 2em;
 
-    
+.triangle.bottom {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
 }
-input[type='checkbox'] {
-    width: 4rem;
-    height: 1.7rem;
+
+.triangle.left {
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.triangle.right {
+ left: 380px;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
 }
