@@ -2,6 +2,8 @@
 
 This is a simple React application that reminds you to reapply sunscreen every 1.5 hours. It allows you to turn the reminders on or off and provides a customized alert with options to remind later or acknowledge the reminder. Additionally, the app fetches the UV index and updates the sun image according to the UV index level.
 
+![screencapture-localhost-3000-2024-07-05-09_12_11](https://github.com/KhadeejaArshadAli/Sunscreen-Reminder-App/assets/100237963/61f35323-0b02-4cde-8bfe-5d8c0ce0dd50)
+
 ## Features
 
 - **Sunscreen Reminders**: Receive alerts every 1.5 hours to reapply sunscreen.
