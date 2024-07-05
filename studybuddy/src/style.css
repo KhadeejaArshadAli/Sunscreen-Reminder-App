@@ -8,7 +8,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 .upper {
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 .heading {
   text-align: center;
@@ -28,42 +28,46 @@ body {
 .para {
   font-weight: 600;
   font-size: 1.4rem;
+  
   margin: 0; /* Reset default margin */
   padding: 0; /* Reset default padding */
 
   margin-bottom: 10px;
+  margin-right: 10px;
 }
 .now {
   margin: 0; /* Reset default margin */
   padding: 0;
   font-size: 5rem;
   font-weight: 800;
+  margin-right: 10px;
 }
 .Low,
 .Medium,
 .High,
 .Extreme {
-  margin-top: 1.1rem;
+  margin-top: 1.3rem;
   height: 2.5rem;
-  width: 8rem;
-  background-color: greenyellow;
-  border: 1px solid black;
+  width: 10rem;
+  background-color: #51B94A;
+  border: 2px solid black;
   font-size: 1.7rem;
   font-weight: 700;
   display: flex;
   justify-content: center;
+  border-radius: 6px;
 }
 .Medium {
-  background-color: rgb(0, 179, 255);
+  background-color: #EFEA2E;
 }
 .High {
-  background-color: rgb(255, 213, 0);
+  background-color:#F7971F;
 }
 .Extreme {
-  background-color: rgb(234, 0, 255);
+  background-color: #7E53A2;
 }
 .week {
-  margin-top: 4rem;
+  
   margin-left: 2rem;
 }
 .days {
@@ -100,21 +104,6 @@ input[type="checkbox"] {
   height: 1.7rem;
 }
 
-.green {
-  background-color: greenyellow;
-}
-
-.yellow {
-  background-color: rgb(0, 179, 255);
-}
-
-.orange {
-  background-color: rgb(255, 213, 0);
-}
-
-.violet {
-  background-color: rgb(234, 0, 255);
-}
 .day {
   display: flex;
   flex-direction: column;
@@ -123,7 +112,7 @@ input[type="checkbox"] {
 }
 .label {
   margin-top: 1rem;
-  font-size: 1em;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -166,3 +155,21 @@ input[type="checkbox"] {
   align-items: center;
   margin-top: 2rem;
 }
+
+.my-popup {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.my-title {
+  color: #343a40;
+  font-size: 30px;
+}
+
+.fore{
+  font-size: 2rem;
+ 
+}
+
+
+

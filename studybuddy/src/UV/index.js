@@ -4,57 +4,46 @@ function UV() {
     const [currentUVIndex, setCurrentUVIndex] = useState(null);
     const [uvForecast, setUvForecast] = useState([]);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    // const forecastUVdata = async () => {
-    //     try {
-    //         var myHeaders = new Headers();
-    //         myHeaders.append("x-access-token", "openuv-vay3rly6d8264-io");
-    //         myHeaders.append("Content-Type", "application/json");
+    const forecastUVdata = async () => {
+        try {
+            var myHeaders = new Headers();
+            myHeaders.append("x-access-token", "openuv-vay3rly6d8264-io");
+            myHeaders.append("Content-Type", "application/json");
 
-    //         var requestOptions = {
-    //             method: 'GET',
-    //             headers: myHeaders,
-    //             redirect: 'follow'
-    //         };
+            var requestOptions = {
+                method: 'GET',
+                headers: myHeaders,
+                redirect: 'follow'
+            };
 
-    //         const response = await fetch("https://api.openuv.io/api/v1/forecast?lat=24.97&lng=67.05&alt=100&dt=", requestOptions)
+            const response = await fetch("https://api.openuv.io/api/v1/forecast?lat=24.97&lng=67.05&alt=100&dt=", requestOptions)
 
-    //         if (!response.ok) {
-    //             throw new Error(`HTTP error! status: ${response.status}`);
-    //         }
-    //         const data = await response.json();
-    //         //console.log(data.result[0].uv);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            //console.log(data.result[0].uv);
 
-    //         setCurrentUVIndex(Math.round(data.result[0].uv));  // Extract the first UV index value
-    //         // Extract UV forecast values
-    //         const forecast = data.result.slice(0, 8).map(item => Math.round(item.uv));
-    //         console.log(forecast);
-    //         setUvForecast(forecast);
-
-
-
-    //     } catch (error) {
-    //         console.error('Error fetching UV data:', error);
-    //     }
+            setCurrentUVIndex(Math.round(data.result[0].uv));  // Extract the first UV index value
+            // Extract UV forecast values
+            const forecast = data.result.slice(0, 8).map(item => Math.round(item.uv));
+            console.log(forecast);
+            setUvForecast(forecast);
 
 
-    // };
-    // // //     // fetchUVData();
-    // forecastUVdata();
-    // }, []);
-    const getUVIndexClass = (uvIndex) => {
-        if (uvIndex >= 0 && uvIndex <= 2) {
-            return 'green';
-        } else if (uvIndex >= 3 && uvIndex <= 5) {
-            return 'yellow';
-        } else if (uvIndex >= 6 && uvIndex <= 7) {
-            return 'orange';
-        } else if (uvIndex >= 8) {
-            return 'violet';
+
+        } catch (error) {
+            console.error('Error fetching UV data:', error);
         }
-        return '';
+
+
     };
+  
+    forecastUVdata();
+    }, []);
+  
     const getUVIndexClass2 = (uvIndex) => {
         if (uvIndex <= 2) return 'low';
         if (uvIndex <= 5) return 'moderate';
@@ -72,13 +61,13 @@ function UV() {
             </div>
             <div className='measure'>
 
-                <div className={`current-uv-index ${getUVIndexClass2(0)}`}>
+                <div className={`current-uv-index ${getUVIndexClass2(currentUVIndex)}`}>
 
                     <div className='inside'>
                         <h2 className='para'>Current UV Index</h2>
 
                         <p className='now'>
-                            {0}
+                            {currentUVIndex}
                         </p>
                     </div>
 
@@ -96,48 +85,48 @@ function UV() {
                 </div>
             </div>
             <div className='week'>
-                <h2>UV Index Forcast</h2>
+                <h2 className='fore'>UV Index Forcast</h2>
                 <div className='days'>
-                    {/* {uvForecast.length > 0 && ( */}
+                    {uvForecast.length > 0 && (
                     <>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(0)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[1])}`}>{uvForecast[1]}</div>
                             <div className='label'>Mon</div>
 
                         </div>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(11)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[2])}`}>{uvForecast[2]}</div>
                             <div className='label'>Tues</div>
 
                         </div>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(5)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[3])}`}>{uvForecast[3]}</div>
                             <div className='label'>Wed</div>
 
                         </div>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(2)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[4])}`}>{uvForecast[4]}</div>
                             <div className='label'>Thurs</div>
 
                         </div>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(7)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[5])}`}>{uvForecast[5]}</div>
                             <div className='label'>Fri</div>
 
                         </div> <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(8)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[6])}`}>{uvForecast[6]}</div>
                             <div className='label'>Sat</div>
 
                         </div>
                         <div className='day'>
-                            <div className={`day1 ${getUVIndexClass2(4)}`}>0</div>
+                            <div className={`day1 ${getUVIndexClass2(uvForecast[7])}`}>{uvForecast[7]}</div>
                             <div className='label'>Sun</div>
 
                         </div>
 
 
                     </>
-                    {/* )} */}
+                     )} 
 
                 </div>
 
