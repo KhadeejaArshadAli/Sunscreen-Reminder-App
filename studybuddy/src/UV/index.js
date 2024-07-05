@@ -55,7 +55,12 @@ function UV() {
         }
         return '';
     };
-
+    const getUVIndexClass2 = (uvIndex) => {
+        if (uvIndex <= 2) return 'low';
+        if (uvIndex <= 5) return 'moderate';
+        if (uvIndex <= 7) return 'high';
+        return 'very-high';
+    };
 
 
     return (
@@ -67,12 +72,16 @@ function UV() {
             </div>
             <div className='measure'>
 
-                <div className={`current-uv-index ${getUVIndexClass(11)}`}>
-                    <p className='para'>Current UV Index</p>
+                <div className={`current-uv-index ${getUVIndexClass2(0)}`}>
 
-                    <p className='now'>
-                        {0}
-                    </p>
+                    <div className='inside'>
+                        <h2 className='para'>Current UV Index</h2>
+
+                        <p className='now'>
+                            {0}
+                        </p>
+                    </div>
+
 
 
 
@@ -90,51 +99,51 @@ function UV() {
                 <h2>UV Index Forcast</h2>
                 <div className='days'>
                     {/* {uvForecast.length > 0 && ( */}
-                        <>  
+                    <>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Mon</div>
+                            <div className={`day1 ${getUVIndexClass2(0)}`}>0</div>
+                            <div className='label'>Mon</div>
 
                         </div>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Tues</div>
+                            <div className={`day1 ${getUVIndexClass2(11)}`}>0</div>
+                            <div className='label'>Tues</div>
 
                         </div>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Wed</div>
+                            <div className={`day1 ${getUVIndexClass2(5)}`}>0</div>
+                            <div className='label'>Wed</div>
 
                         </div>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Thurs</div>
+                            <div className={`day1 ${getUVIndexClass2(2)}`}>0</div>
+                            <div className='label'>Thurs</div>
 
                         </div>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Fri</div>
+                            <div className={`day1 ${getUVIndexClass2(7)}`}>0</div>
+                            <div className='label'>Fri</div>
 
                         </div> <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div  className='label'>Sat</div>
+                            <div className={`day1 ${getUVIndexClass2(8)}`}>0</div>
+                            <div className='label'>Sat</div>
 
                         </div>
                         <div className='day'>
-                        <div className={`day1 ${getUVIndexClass(0)}`}>0</div>
-                        <div className='label'>Sun</div>
+                            <div className={`day1 ${getUVIndexClass2(4)}`}>0</div>
+                            <div className='label'>Sun</div>
 
                         </div>
-                       
-                           
-                        </>
+
+
+                    </>
                     {/* )} */}
 
                 </div>
 
             </div>
 
-         
+
 
 
         </>

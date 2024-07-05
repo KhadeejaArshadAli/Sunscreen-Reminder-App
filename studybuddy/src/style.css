@@ -24,26 +24,19 @@ body {
   justify-content: space-around;
   align-items: baseline;
 }
-.current-uv-index {
-  background-color: rgb(255, 213, 0);
-  height: 16rem;
-  width: 16rem;
-  border-radius: 8rem;
-  align-content: center;
-  border: 5px solid black;
- 
-}
+
 .para {
-  margin-left: 2.7rem;
-  margin-top: 4rem;
-  margin-bottom: 0;
   font-weight: 600;
   font-size: 1.4rem;
+  margin: 0; /* Reset default margin */
+  padding: 0; /* Reset default padding */
+
+  margin-bottom: 10px;
 }
 .now {
-  margin-top: 0;
+  margin: 0; /* Reset default margin */
+  padding: 0;
   font-size: 5rem;
-  margin-left: 5.5rem;
   font-weight: 800;
 }
 .Low,
@@ -85,22 +78,14 @@ body {
 .day5,
 .day6,
 .day7 {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 2rem;
-  background-color: rgb(234, 0, 255);
-  border: 1.5px solid black;
+  height: 7rem;
+  width: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
 }
-.day2 {
-  background-color: rgb(255, 213, 0);
-}
-.day3 {
-  background-color: rgb(0, 179, 255);
-}
+
 
 .reminder {
   margin-top: 1.7rem;
@@ -116,30 +101,68 @@ input[type="checkbox"] {
 }
 
 .green {
-    background-color: greenyellow;
-  }
-  
-.yellow {
-    background-color: rgb(0, 179, 255);
-  }
-  
-.orange {
-    background-color: rgb(255, 213, 0);
-  }
-  
-.violet {
-    background-color: rgb(234, 0, 255);
-  }
-.day {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-  }
-.label{
-    margin-top: 1rem;
-    font-size: 1em;
-    font-weight: 700;
-    
+  background-color: greenyellow;
 }
-  
+
+.yellow {
+  background-color: rgb(0, 179, 255);
+}
+
+.orange {
+  background-color: rgb(255, 213, 0);
+}
+
+.violet {
+  background-color: rgb(234, 0, 255);
+}
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+.label {
+  margin-top: 1rem;
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.low {
+  background-image: url("./Asset/green.png");
+  background-size: cover;
+  background-position: center;
+ 
+}
+.moderate {
+  background-image: url("./Asset/medium-removebg-preview\ \(1\).png");
+  background-size: cover;
+  background-position: center;
+}
+
+.high {
+  background-image: url("./Asset/high.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.very-high {
+  background-image: url("./Asset/newextreme.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.current-uv-index {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
